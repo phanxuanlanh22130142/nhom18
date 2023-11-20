@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trang Web Giải Trí</title>
+  <style>
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .taskManager {
+      padding: 10px;
+      background-color: #f2f2f2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .login-register-container {
+      display: flex;
+    }
+
+    .login-button,
+    .register-button {
+      padding: 8px 12px;
+      font-size: 14px;
+      width: 100px;
+      cursor: pointer;
+    }
+
+    .about-button-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .about-button {
+      margin-right: 20px; 
+      cursor: pointer; 
+    }
+
+    .taskManager input[type="text"],
+    .taskManager input[type="password"] {
+      padding: 8px;
+      margin-right: 5px;
+    }
+
+    .taskManager button {
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+
+    .tab {
+      overflow: hidden;
+      border: 1px solid #ccc;
+      background-color: #f1f1f1;
+    }
+
+    .tab button {
+      background-color: inherit;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 10px 20px;
+      transition: 0.3s;
+    }
+
+    .tab button:hover {
+      background-color: #ddd;
+    }
+
+    .tabcontent {
+      display: none;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-top: none;
+    }
+
+    .tabcontent.active {
+      display: block;
+    }
+    .container .button {
+    display: inline-block;
+    padding: 15px 30px; 
+    background-color: #555;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 20px; 
+}
+
+        .container .button:hover {
+            background-color: #777;
+        }
+        .container {
+    color: blue; 
+    font-family: "Arial", sans-serif; 
+}
+
+
+
+.welcome-message {
+    text-align: center;
+  }
+
+        .box {
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 600%; 
+    height: auto;
+    max-width: 800px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+
+
+        .box:nth-child(odd) {
+            background-color: #eaeaea;
+        }
+        .box .text {
+    color: blue; 
+    font-size: 20px; 
+}
+
+       
+
+        .box p {
+            color: #888;
+            margin-top: 10px;
+        }
+
+       
+
+        @media (max-width: 768px) {
+    .container p {
+        font-size: 14px;
+        color: red;
+        margin-left: 25%;
+    }
+}
+
+            
+            .container h1 {
+    color: red;
+    font-size: 40px;
+}
+
+            .container p {
+    color:darkgreen;
+    font-size: 18px;
+    margin-left: 28%; 
+}
+        
+        .tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+
+.tab a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 30px 36px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+
+.tab a:hover {
+  background-color: #ddd;
+}
+
+
+.tab a.active {
+  background-color: #ccc;
+}
+
+
+.tabcontent {
+  
+  
+  
+  width: calc(100% - 60px); 
+
+  display: none;
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-top: none;
+ 
+  margin: 0 auto; 
+}
+.center-menu {
+  text-align: center;
+  margin-top: 20px;
+  width: 50%;
+  font-size: 40px;
+}
+
+.center-menu a {
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  background-color: lightgray;
+  margin-right: 10px;
+}
+
+.center-content {
+  text-align: center;
+}
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 15px 30px; 
+    transition: 0.3s;
+}
+.tablinks {
+  font-size: 40px;
+  color:greenyellow; 
+  display: flex;
+  justify-content: center;
+}
+.tab {
+  display: flex;
+  justify-content: center;
+}
+  </style>
+</head>
+<body>
+  <div class="taskManager">
+    <div class="login-register-container">
+      <button class="login-button" onclick="openLogin()">Đăng nhập</button>
+      <button class="register-button" onclick="openRegister()">Đăng ký</button>
+    </div>
+    <div class="about-button-container">
+      <button onclick="window.location.href = 'about.html';">About</button>
+    </div>
+  </div>
+  
+  <div class="login-container" id="loginContainer" style="display: none;">
+    <h2>Đăng nhập</h2>
+    <input type="text" id="username" placeholder="Tên đăng nhập">
+    <input type="password" id="password" placeholder="Mật khẩu">
+    <button onclick="login()">Đăng nhập</button>
+  </div>
+  
+  <div class="register-container" id="registerContainer" style="display: none;">
+    <h2>Đăng ký</h2>
+    <input type="text" id="newUsername" placeholder="Tên đăng nhập mới">
+    <input type="password" id="newPassword" placeholder="Mật khẩu mới">
+    <button onclick="register()">Đăng ký</button>
+  </div>
+  
+  <div class="container">
+    <div class="welcome-message">
+      <h1>Chào mừng đến với Web Giải trí</h1>
+    </div>
+    <p>
+        Đây là một trang web đơn giản được xây dựng bởi các bạn nhóm 18 đầy nhiệt huyết</br>
+        Trang web này được tạo ra với mục đích tạo một thế giới vui chơi giải trí sau  
+                                      giờ học 
+    </p>
+    
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'menu')">Menu</button>
+        
+      </div>
+      
+      <div id="menu" class="tabcontent">
+        <div class="tab">
+          <button class="tablinks" onclick="openNestedTab(event, 'phim')">Phim</button>
+          <button class="tablinks" onclick="openNestedTab(event, 'truyen')">Truyện</button>
+          <button class="tablinks" onclick="openNestedTab(event, 'nhac')">Nhạc</button>
+          <button class="tablinks" onclick="openNestedTab(event, 'game')">Game</button>
+        </div>
+      </div>
+      <div class="center-content">
+        <div id="phim" class="tabcontent">
+          <h3>Phim</h3>
+          <div class="box">
+            <img src="image/phim.jpg" alt="phim">
+            
+          </div>
+          <p>"Hãy cùng nhau khám phá một thế giới đầy bí ẩn và hấp dẫn qua những bộ phim này!" </p>
+
+        </div>
+      
+        <div class="center-content">
+          <div id="truyen" class="tabcontent">
+            <h3>Truyện</h3>
+            <div class="box">
+              <img src="image/truyen.jpg" alt="truyen">
+              
+            </div>
+            <p>"Hãy đồng hành cùng nhân vật chính và khám phá cuộc phiêu lưu tuyệt vời trong truyện này!" </p>
+  
+          </div>
+          <div class="center-content">
+            <div id="nhac" class="tabcontent">
+              <h3>Nhạc</h3>
+              <div class="box">
+                <img src="image/nhac.jpg" alt="Nhạc">
+                
+              </div>
+              <p>"Hãy cùng đắm chìm trong giai điệu tuyệt vời và cảm nhận sự mãn nguyện mỗi khi nghe bài hát này!" </p>
+    
+            </div>
+            <div class="center-content">
+              <div id="game" class="tabcontent">
+                <h3>Game</h3>
+                <div class="box">
+                  <img src="image/game.jpg" alt="game">
+                  
+                </div>
+                <p>"Hãy sẵn sàng tham gia vào cuộc phiêu lưu đầy kịch tính và trí tuệ của trò chơi này!" </p>
+      
+              </div>
+            </div>
+
+          
+  <script>
+      function openLogin() {
+      document.getElementById("loginContainer").style.display = "block";
+      document.getElementById("registerContainer").style.display = "none";
+    }
+
+    function openRegister() {
+      document.getElementById("registerContainer").style.display = "block";
+      document.getElementById("loginContainer").style.display = "none";
+    }
+
+    function openAbout() {
+      alert("Thông tin về trang web sẽ được hiển thị ở đây.");
+    }
+
+    function openTab(evt, tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  document.getElementById(tabName).style.display = "block";
+}
+
+function openNestedTab(evt, nestedTabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  document.getElementById(nestedTabName).style.display = "block";
+}
+
+
+    function login() {
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+      /* Kiểm tra thông tin đăng nhập và thực hiện hành động liên quan */
+    }
+
+    function register() {
+      var newUsername = document.getElementById("newUsername").value;
+      var newPassword = document.getElementById("newPassword").value;
+      /* Xử lý thông tin đăng ký và lưu trữ */
+    }
+    function redirectToAbout() {
+                window.location.href = "about.html";
+            }
+  </script>
+</body>
+</html>
