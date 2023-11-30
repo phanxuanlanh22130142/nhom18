@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+   
+    .tab {
+      overflow: hidden;
+      border: 1px solid #ccc;
+      background-color: #f1f1f1;
+    }
+    
+    .tab button {
+      background-color: inherit;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      transition: 0.3s;
+    }
+    
+    .tab button:hover {
+      background-color: #ddd;
+    }
+    
+    .tab button.active {
+      background-color: #ccc;
+    }
+    
+    
+    .tabcontent {
+      display: none;
+      padding: 6px 12px;
+      border: 1px solid #ccc;
+      border-top: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="tab">
+  <button class="tablinks" onclick="openTab(event, 'Week4')" id="defaultOpen">Week 4</button>
+  <button class="tablinks" onclick="openTab(event, 'Week5')" id="defaultOpen">Week 5</button>
+</div>
+
+<div id="Week4" class="tabcontent">
+  <h3>Week 4 </h3>
+  <div class="box">
+    <h4>Phan Xuân Lãnh</h4>
+    <ul>
+      <li>STT: 1</li>
+      <li>Tên Công Việc: Tạo trang chủ đơn giản</li>
+      <li>Người Thực Hiện:Phan Xuân Lãnh</li>
+      <li>Ngày Bắt Đầu:ngày 16 tháng 11 năm 2023 </li>
+      <li>Ngày Kết Thúc:ngày 20 tháng 11 năm 2023</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h4>Nguyễn Thành Phước</h4>
+    <ul>
+      <li>STT:2</li>
+      <li>Tên Công Việc:Tạo  trang About đơn giản</li>
+      <li>Người Thực Hiện: Nguyễn Thành Phước</li>
+      <li>Ngày Bắt Đầu:ngày 16 tháng 11 năm 2023</li>
+     <li>Ngày Kết Thúc:ngày 20tháng 11 năm 2023</li></li>
+    </ul>
+  </div>
+</div>
+
+<div id="Week5" class="tabcontent">
+  <h3>Week 5 </h3>
+  <div class="box">
+    <h4>Phan Xuân Lãnh</h4>
+    <ul>
+      <li>STT: 1</li>
+      <li>Tên Công Việc: Tiếp tục hoàn thành trang chủ và tạo trang chức năng group_diary</li>
+      <li>Người Thực Hiện:Phan Xuân Lãnh</li>
+      <li>Ngày Bắt Đầu:ngày 26 tháng 11 năm 2023 </li>
+      <li>Ngày Kết Thúc:ngày 30 tháng 11 năm 2023</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h4>Nguyễn Thành Phước</h4>
+    <ul>
+      <li>STT:2</li>
+      <li>Tên Công Việc:Tiếp tục hoàn thành trang About</li>
+      <li>Người Thực Hiện: Nguyễn Thành Phước</li>
+      <li>Ngày Bắt Đầu:ngày 25 tháng 11 năm 2023</li>
+     <li>Ngày Kết Thúc:ngày 30 tháng 11 năm 2023</li></li>
+    </ul>
+  </div>
+  <div class="box">
+    <h4>Võ Tấn Tài</h4>
+    <ul>
+      <li>STT:3</li>
+      <li>Tên Công Việc:Triển khai html và java Script cơ bản của trang phim</li>
+      <li>Người Thực Hiện: Võ Tấn Tài</li>
+      <li>Ngày Bắt Đầu:ngày 25 tháng 11 năm 2023</li>
+     <li>Ngày Kết Thúc:ngày 30 tháng 11 năm 2023</li></li>
+    </ul>
+  </div>
+  <div class="box">
+    <h4>Bùi Thị Mỹ Dung</h4>
+    <ul>
+      <li>STT:4</li>
+<li>Tên Công Việc:Triển khai css cơ bản của trang phim</li>
+      <li>Người Thực Hiện: Bùi Thị Mỹ Dung</li>
+      <li>Ngày Bắt Đầu:ngày 25 tháng 11 năm 2023</li>
+     <li>Ngày Kết Thúc:ngày 30 tháng 11 năm 2023</li></li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  function openTab(evt, tabName) {
+    
+    let tabContents = document.getElementsByClassName("tabcontent");
+    for (let tab of tabContents) {
+      tab.style.display = "none";
+    }
+   
+    let tabLinks = document.getElementsByClassName("tablinks");
+    for (let tablink of tabLinks) {
+      tablink.classList.remove("active");
+    }
+   
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.classList.add("active");
+  }
+  document.getElementById("defaultOpen").click();  
+</script>
+
+</body>
+</html>

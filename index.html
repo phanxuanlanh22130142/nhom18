@@ -31,7 +31,7 @@
       cursor: pointer;
     }
 
-    .about-button-container {
+    .button-container {
       display: flex;
       align-items: center;
     }
@@ -164,7 +164,7 @@
             .container p {
     color:darkgreen;
     font-size: 18px;
-    margin-left: 28%; 
+    margin-left: 28%;
 }
         
         .tab {
@@ -253,9 +253,11 @@
       <button class="login-button" onclick="openLogin()">Đăng nhập</button>
       <button class="register-button" onclick="openRegister()">Đăng ký</button>
     </div>
-    <div class="about-button-container">
+    <div class="button-container">
       <button onclick="window.location.href = 'about.html';">About</button>
+      <button onclick="window.location.href = 'group_diary.html';">Group Diary</button>
     </div>
+    
   </div>
   
   <div class="login-container" id="loginContainer" style="display: none;">
@@ -290,7 +292,7 @@
       <div id="menu" class="tabcontent">
         <div class="tab">
           <button class="tablinks" onclick="openNestedTab(event, 'phim')">Phim</button>
-          <button class="tablinks" onclick="openNestedTab(event, 'truyen')">Truyện</button>
+<button class="tablinks" onclick="openNestedTab(event, 'truyen')">Truyện</button>
           <button class="tablinks" onclick="openNestedTab(event, 'nhac')">Nhạc</button>
           <button class="tablinks" onclick="openNestedTab(event, 'game')">Game</button>
         </div>
@@ -374,7 +376,7 @@ function openNestedTab(evt, nestedTabName) {
 
 
     function login() {
-      var username = document.getElementById("username").value;
+var username = document.getElementById("username").value;
       var password = document.getElementById("password").value;
       /* Kiểm tra thông tin đăng nhập và thực hiện hành động liên quan */
     }
@@ -383,6 +385,9 @@ function openNestedTab(evt, nestedTabName) {
       var newUsername = document.getElementById("newUsername").value;
       var newPassword = document.getElementById("newPassword").value;
       /* Xử lý thông tin đăng ký và lưu trữ */
+    }
+    function redirectToGroup_Diary(){
+      window.location.href = "group_diary.html"
     }
     function redirectToAbout() {
                 window.location.href = "about.html";
